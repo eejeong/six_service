@@ -37,5 +37,9 @@ public class MainController {
     public String detail(Model model) throws Exception {
         model.addAttribute("center", "detail");
         return "index";
+    }    @RequestMapping("/login")
+    public String login(Model model) {
+        model.addAttribute("center", "login");
+        return "index";
     }
 }
