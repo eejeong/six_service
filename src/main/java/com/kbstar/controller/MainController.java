@@ -23,9 +23,19 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("/all")
-    public String all(Model model) throws Exception {
-        model.addAttribute("center", "all");
+    @RequestMapping("/contact")
+    public String contact(Model model) throws Exception {
+        model.addAttribute("center", "contact");
+        return "index";
+    }
+    @RequestMapping("/shop")
+    public String shop(Model model) throws Exception {
+        model.addAttribute("center", "shop");
+        return "index";
+    }
+    @RequestMapping("/detail")
+    public String detail(Model model) throws Exception {
+        model.addAttribute("center", "detail");
         return "index";
     }
 }
