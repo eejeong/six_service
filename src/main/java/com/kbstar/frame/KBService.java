@@ -1,8 +1,8 @@
-package com.kbstar.ftame;
+package com.kbstar.frame;
 
 import java.util.List;
 
-public interface Service<K,V>{
+public interface KBService<K,V>{
     public void register(V v);
     public void remove(K k);
     public void modify(V v);
