@@ -14,8 +14,7 @@ public class Contact {
     private String msg;
     private String rdate;
 
-    public Contact(String cust_id, String email, String msg) {
-        this.cust_id = cust_id;
+    public Contact(String email, String msg) {
         this.email = email;
         this.msg = msg;
     }

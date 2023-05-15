@@ -118,7 +118,8 @@ public class MainController {
 
 
     @RequestMapping("/contactimpl")
-    public String contactimpl(Model model, Contact contact) throws Exception {
+    public String contactimpl(Model model, Contact contact, HttpSession session) throws Exception {
+        log.info((contact)+"실패=");
         try {
             contactService.register(contact);
             log.info(contact.toString());

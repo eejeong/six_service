@@ -43,20 +43,19 @@
             <div class="col-lg-7 mb-5 align-content-center" >
                 <div class="contact_form">
                     <form name="contactForm" id="contactForm" novalidate="novalidate">
-                        <div class="control-group" >
-                            <input type="text" class="form-control" id="cust_id" name="cust_id" placeholder="Your ID"
-                                required="required" data-validation-required-message="Please enter your name" />
-                            <p class="help-block text-danger"></p>
-                        </div>
+                        <input type="hidden" value="${logincust.id}" name="cust_id">
                         <div class="control-group">
+                            <label for="email">답변 받으실 메일 주소</label>
                             <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
-                                required="required" data-validation-required-message="Please enter your email" />
+                                   required="required" data-validation-required-message="Please enter your email" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input class="form-control" rows="6" name="msg" id="msg" placeholder="Message"
-                                required="required"
-                                data-validation-required-message="Please enter your message">
+                            <label for="msg">궁금하신 내용을 입력해 주세요</label>
+                            <textarea class="form-control" rows="6" name="msg" id="msg" placeholder="Message"
+                                                               required="required"
+                                                               data-validation-required-message="Please enter your message">
+                            </textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                         <div  style="display: flex;justify-content: center;">

@@ -17,7 +17,7 @@ class   InsertTest {
     ContactService service;
     @Test
         void contextLoads() {
-            Contact obj = new Contact("id01","ny1223@naver.com","결제 취소 문의드립니다.");
+            Contact obj = new Contact("ny1223@naver.com","결제 취소 문의드립니다.");
             try {
                 service.register(obj);
                 service.getall();
