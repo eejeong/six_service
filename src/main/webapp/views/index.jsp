@@ -133,6 +133,7 @@
                     <div class="navbar-nav mr-auto py-0">
                         <a href="/" class="nav-item nav-link">Home</a>
                         <a href="/shop" class="nav-item nav-link">Shop</a>
+                        <a href="#" class="nav-item nav-link">Store</a>
                         <c:choose>
                             <c:when test="${logincust!=null}">
                                 <a href="/contact" class="nav-item nav-link">Contact</a>
@@ -142,16 +143,16 @@
                     <div class="navbar-nav ml-auto py-0">
 
 
-                    <c:choose>
-                        <c:when test="${logincust==null}">
-                            <a href="/login" class="nav-item nav-link">Login</a>
-                            <a href="/register" class="nav-item nav-link">Register</a>
-                        </c:when>
-                        <c:otherwise>
-                            <a href="" class="nav-item nav-link">${logincust.id}</a>
-                            <a href="/logout" class="nav-item nav-link">Logout</a>
-                        </c:otherwise>
-                    </c:choose>
+                        <c:choose>
+                            <c:when test="${logincust==null}">
+                                <a href="/login" class="nav-item nav-link">Login</a>
+                                <a href="/register" class="nav-item nav-link">Register</a>
+                            </c:when>
+                            <c:otherwise>
+                                <a href="" class="nav-item nav-link">${logincust.id}</a>
+                                <a href="/logout" class="nav-item nav-link">Logout</a>
+                            </c:otherwise>
+                        </c:choose>
                     </div>
                 </div>
             </nav>
@@ -169,10 +170,6 @@
     </c:otherwise>
 </c:choose>
 <!-- Main Center End -->
-
-
-
-
 
 
 <!-- Vendor Start -->

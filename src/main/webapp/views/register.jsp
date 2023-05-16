@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
 <script>
     let register_form = {
         init: function () {
@@ -61,6 +63,18 @@
         }
     };
 
+    function sample4_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function (data) {
+                var roadAddr = data.roadAddress; // 도로명 주소 변수
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('zipcode').value = data.zonecode;
+                document.getElementById("address1").value = roadAddr;
+            }
+        }).open();
+    }
+
     $(function () {
         register_form.init();
     });
@@ -89,20 +103,39 @@
                             <label for="name">Name:</label>
                             <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
                         </div>
+                        <input type="hidden" name="address" id="address" value="">
                         <div class="form-group">
-                            <label for="address">Address:</label>
-                            <input type="text" class="form-control" id="address" placeholder="Enter address"
-                                   name="address">
+                            <label for="name">Address:</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="우편번호"
+                                       style="margin-right: 10px">
+                                <div class="input-group-append">
+                                    <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+                                </div>
+                            </div>
                         </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="address1" name="address1" placeholder="도로명주소">
+                            <span id="guide" style="color:#999;display:none"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="address2" name="address2" placeholder="상세주소">
+                        </div>
+
                         <div class="form-group">
                             <label for="phone">Phone:</label>
                             <input type="text" class="form-control" id="phone" placeholder="Enter phone" name="phone">
                         </div>
                         <div class="form-group">
-                            <label for="gender">Gender:</label>
-                            <input type="text" class="form-control" id="gender" placeholder="Enter gender"
-                                   name="gender">
+                            <label>Gender:</label>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="gender1" name="gender" value="F"
+                                       checked>여성 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="radio" class="form-check-input" id="gender2" name="gender"
+                                       value="M">남성
+                            </div>
                         </div>
+
                     </div>
                     <div style="display: flex; justify-content: center">
                         <button class="btn btn-primary py-2 px-4" type="button" id="register_btn">Register</button>

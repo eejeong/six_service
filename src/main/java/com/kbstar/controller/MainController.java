@@ -103,9 +103,10 @@ public class MainController {
 
     @RequestMapping(value = "/registerimpl")
     public String registerImpl(Model model,
-                               Cust cust, HttpSession session) throws Exception {
+                               Cust cust, String zipcode, String address1, String address2, HttpSession session) throws Exception {
         try {
             cust.setPwd(encoder.encode(cust.getPwd()));
+            cust.setAddress(address1 + " " + address2 + " (" + zipcode + ")");
             custService.register(cust);
             session.setAttribute("logincust", cust);
         } catch (Exception e) {
@@ -119,7 +120,7 @@ public class MainController {
 
     @RequestMapping("/contactimpl")
     public String contactimpl(Model model, Contact contact, HttpSession session) throws Exception {
-        log.info((contact)+"실패=");
+        log.info((contact) + "실패=");
         try {
             contactService.register(contact);
             log.info(contact.toString());
