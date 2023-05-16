@@ -33,6 +33,29 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <script type="text/javascript">
+        <%--장바구니--%>
+
+        let cart ={
+            cartOrlogin:function (){
+                $('#cart_btn').click(function (){
+                    if(${logincust == null}){
+                        if(confirm("로그인이 필요합니다. 로그인 하시겠습니까?")){
+                            location.href="/login";
+                        }else {
+                            location.href="/";
+                        }
+                    }else {
+                        location.href="/cart:cust_id?=${logincust.id}";
+                    }
+                })
+            }
+        }
+        <%--장바구니 end--%>
+    </script>
+
+
 </head>
 
 <body>
@@ -93,7 +116,7 @@
                 <span class="badge">0</span>
             </a>
             <%--        장바구니--%>
-            <a href="/cart" class="btn border">
+            <a href="javascript:cart.cartOrlogin()" type="button" class="btn border" id="cart_btn">
                 <i class="fas fa-shopping-cart text-primary"></i>
                 <span class="badge">0</span>
             </a>
