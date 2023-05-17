@@ -48,12 +48,6 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("/shop")
-    public String shop(Model model) throws Exception {
-        model.addAttribute("center", "shop");
-        return "index";
-    }
-
     @RequestMapping("/detail")
     public String detail(Model model) throws Exception {
         model.addAttribute("center", "detail");

@@ -1,7 +1,6 @@
 package com.kbstar.service;
 
 import com.kbstar.dto.Contact;
-import com.kbstar.dto.Cust;
 import com.kbstar.frame.KBService;
 import com.kbstar.mapper.ContactMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,15 +42,10 @@ public class ContactService implements KBService<String, Contact> {
         Contact contact = contactMapper.select(s);
         return contact;
     }
+    
 
     @Override
-    public List<Contact> getall() {
-        List<Contact> list = contactMapper.selectall();
-        return list;
-    }
-
-    @Override
-    public List<Cust> get() throws Exception {
+    public List<Contact> get() throws Exception {
         return null;
     }
 }

@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>EShopper - Bootstrap Shop Template</title>
+    <title>6Shopper - Bootstrap Shop Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -18,7 +18,7 @@
     <!-- Template Javascript -->
     <script src="/js/main.js"></script>
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="/img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -29,25 +29,25 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 
     <script type="text/javascript">
         <%--장바구니--%>
 
-        let cart ={
-            cartOrlogin:function (){
-                $('#cart_btn').click(function (){
-                    if(${logincust == null}){
-                        if(confirm("로그인이 필요합니다. 로그인 하시겠습니까?")){
-                            location.href="/login";
-                        }else {
-                            location.href="/";
+        let cart = {
+            cartOrlogin: function () {
+                $('#cart_btn').click(function () {
+                    if (${logincust == null}) {
+                        if (confirm("로그인이 필요합니다. 로그인 하시겠습니까?")) {
+                            location.href = "/login";
+                        } else {
+                            location.href = "/";
                         }
-                    }else {
-                        location.href="/cart:cust_id?=${logincust.id}";
+                    } else {
+                        location.href = "/cart:cust_id?=${logincust.id}";
                     }
                 })
             }
@@ -147,7 +147,7 @@
             <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                 <a href="" class="text-decoration-none d-block d-lg-none">
                     <h1 class="m-0 display-5 font-weight-semi-bold"><span
-                            class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
+                            class="text-primary font-weight-bold border px-3 mr-1">6</span>Shopper</h1>
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -155,7 +155,7 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
                         <a href="/" class="nav-item nav-link">Home</a>
-                        <a href="/shop" class="nav-item nav-link">Shop</a>
+                        <a href="/item/shop" class="nav-item nav-link">Shop</a>
                         <a href="#" class="nav-item nav-link">Store</a>
                         <c:choose>
                             <c:when test="${logincust!=null}">
@@ -236,11 +236,11 @@
     <div class="row border-top border-light mx-xl-5 py-4">
         <div class="col-md-6 px-xl-0">
             <p class="mb-md-0 text-center text-md-left text-dark">
-                &copy; <a class="text-dark font-weight-semi-bold" href="#">Your Site Name</a>. All Rights Reserved.
+                &copy; <a class="text-dark font-weight-semi-bold" href="#">6 Shoppers</a>. All Rights Reserved.
                 Designed
                 by
-                <a class="text-dark font-weight-semi-bold" href="https://htmlcodex.com">HTML Codex</a><br>
-                Distributed By <a href="https://kbstar.com" target="_blank">Kbstar</a>
+                <a class="text-dark font-weight-semi-bold" href="https://htmlcodex.com">DIGI CAMPUS</a><br>
+                Distributed By <a href="https://kbstar.com" target="_blank">KBSTAR</a>
             </p>
         </div>
         <div class="col-md-6 px-xl-0 text-center text-md-right">
