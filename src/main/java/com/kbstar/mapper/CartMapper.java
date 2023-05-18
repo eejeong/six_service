@@ -13,4 +13,7 @@ public interface CartMapper extends KBMapper<Integer, Cart> {
     public List<Cart> selectid(String cid);
 
     public Cart cartcheck(Cart cart);
+
+
+    public void update_shop(Cart cart);
 }

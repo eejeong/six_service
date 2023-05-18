@@ -26,7 +26,7 @@
                                     $('#cart_form').attr(
                                         {
                                             method: 'post',
-                                            action: '/cart/update'
+                                            action: '/cart/update_shop'
                                         });
                                     $('#cart_form').submit();
                                 } else {

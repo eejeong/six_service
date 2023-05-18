@@ -39,7 +39,7 @@
           AND c.cust_id = #{cust_id}
           AND it.id = #{item_id}
     </select>
-    <update id="update" parameterType="cart">
+    <update id="update_shop" parameterType="cart">
         UPDATE cart
         SET cnt=#{cnt}
         WHERE cust_id = #{cust_id}

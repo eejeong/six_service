@@ -43,7 +43,7 @@
                                     eventbtn.parent().attr(
                                         {
                                             method: 'post',
-                                            action: '/cart/update'
+                                            action: '/cart/update_shop'
                                         });
                                     eventbtn.parent().submit();
                                 } else {

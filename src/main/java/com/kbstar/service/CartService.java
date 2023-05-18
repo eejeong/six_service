@@ -55,4 +55,8 @@ public class CartService implements KBService<Integer, Cart> {
         Cart rcart = mapper.cartcheck(cart);
         return rcart;
     }
+
+    public void modify_shop(Cart cart) throws Exception {
+        mapper.update_shop(cart);
+    }
 }

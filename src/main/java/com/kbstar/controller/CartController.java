@@ -36,13 +36,14 @@ public class CartController {
         return "redirect:/cart?id=" + cart.getCust_id();
     }
 
-    @RequestMapping("/update")
-    public String update(Cart cart, int detail_cnt) throws Exception {
+    @RequestMapping("/update_shop")
+    public String update_shop(Cart cart, Integer detail_cnt) throws Exception {
         int cnt = cart.getCnt() + detail_cnt;
         cart.setCnt(cnt);
-        cartService.modify(cart);
+        cartService.modify_shop(cart);
         return "redirect:/cart?id=" + cart.getCust_id();
     }
+
 
     @RequestMapping("/insert")
     public String insert(Cart cart) throws Exception {
