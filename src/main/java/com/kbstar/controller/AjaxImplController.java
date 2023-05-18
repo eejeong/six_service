@@ -20,7 +20,7 @@ public class AjaxImplController {
         if (rcart == null) {
             return result;
         } else {
-            result = 1;
+            result = rcart.getCnt();
             return result;
         }
     }

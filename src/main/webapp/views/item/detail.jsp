@@ -19,9 +19,10 @@
                         var item_id = ${gitem.id};
                         $.ajax({
                             url: '/cartcheck',
-                            data: {cust_id: ${logincust.id}, item_id: item_id},
+                            data: {cust_id: "${logincust.id}", item_id: item_id},
                             success: function (result) {
-                                if (result == 1) {
+                                if (result != 0) {
+                                    $('#detail_cnt').val(result);
                                     $('#cart_form').attr(
                                         {
                                             method: 'post',
@@ -48,7 +49,7 @@
         }
     }
     $(function () {
-            console.log(${logincust});
+
             item_detail.init();
         }
     )
@@ -134,6 +135,7 @@
 
                         <input type="hidden" name="cust_id" id="cust_id" value="${logincust.id}">
                         <input type="hidden" name="item_id" id="item_id" value="${gitem.id}">
+                        <input type="hidden" name="detail_cnt" id="detail_cnt" value=0>
                         <input type="text" class="form-control bg-secondary text-center" value="1" id="cnt"
                                name="cnt">
 

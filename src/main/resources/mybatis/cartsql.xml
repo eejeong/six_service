@@ -42,7 +42,8 @@
     <update id="update" parameterType="cart">
         UPDATE cart
         SET cnt=#{cnt}
-        WHERE id = #{id}
+        WHERE cust_id = #{cust_id}
+          AND item_id = #{item_id}
     </update>
     <insert id="insert" parameterType="cart">
         INSERT INTO cart

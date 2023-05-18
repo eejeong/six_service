@@ -37,7 +37,9 @@ public class CartController {
     }
 
     @RequestMapping("/update")
-    public String update(Cart cart) throws Exception {
+    public String update(Cart cart, int detail_cnt) throws Exception {
+        int cnt = cart.getCnt() + detail_cnt;
+        cart.setCnt(cnt);
         cartService.modify(cart);
         return "redirect:/cart?id=" + cart.getCust_id();
     }
