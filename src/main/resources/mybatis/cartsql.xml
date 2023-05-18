@@ -21,6 +21,12 @@
           AND c.item_id = it.id
           AND c.cust_id = #{id}
     </select>
+
+    <select id="mycartcnt" parameterType="String" resultType="Integer">
+        SELECT count(*) as cnt
+        FROM cart
+        WHERE cust_id = #{id}
+    </select>
     <select id="cartcheck" parameterType="cart" resultType="cart">
         SELECT c.id
              , c.cust_id
@@ -46,7 +52,9 @@
           AND item_id = #{item_id}
     </update>
     <update id="update" parameterType="cart">
-        UPDATE cart SET cnt=#{cnt} WHERE id=#{id}
+        UPDATE cart
+        SET cnt=#{cnt}
+        WHERE id = #{id}
     </update>
     <insert id="insert" parameterType="cart">
         INSERT INTO cart
@@ -60,7 +68,9 @@
     </delete>
 
     <delete id="afterOrder" parameterType="String">
-        DELETE FROM cart WHERE cust_id=#{id}
+        DELETE
+        FROM cart
+        WHERE cust_id = #{id}
     </delete>
 
 </mapper>

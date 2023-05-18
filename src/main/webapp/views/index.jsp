@@ -115,6 +115,7 @@
             <c:if test="${logincust != null}">
                 <a href="/cart?id=${logincust.id}" type="button" class="btn border" id="cart_btn">
                     <i class="fas fa-shopping-cart text-primary"></i>
+                    <span id="mycartcnt" class="badge">0</span>
                 </a>
             </c:if>
         </div>
@@ -255,3 +256,32 @@
 </body>
 
 </html>
+<script>
+    let home_category_search = {
+        init: function () {
+            $('#top_search_btn').click(function () {
+                $('#top_search_form').attr({
+                    method: 'post',
+                    action: '/item/search'
+                });
+                $('#top_search_form').submit();
+            });
+            $.ajax({
+                url: '/mycartcnt',
+                data: {id: "${logincust.id}"},
+                success: function (result) {
+                    if (result == 0) {
+                        $('#mycartcnt').css('color', '#6f6f6f')
+                    } else {
+                        $('#mycartcnt').css('color', 'crimson')
+                    }
+                    $('#mycartcnt').text(result);
+                }
+            });
+        }
+    };
+    $(function () {
+            home_category_search.init();
+        }
+    )
+</script>

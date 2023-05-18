@@ -25,4 +25,17 @@ public class AjaxImplController {
         }
     }
 
+    @RequestMapping("/mycartcnt")
+    public Object mycartcnt(String id) throws Exception {
+        int result = 0;
+        log.info(id);
+        log.info("********************************");
+        if (id == null) {
+            return result;
+        } else {
+            result = cartService.mycartcnt(id);
+            return result;
+        }
+    }
+
 }

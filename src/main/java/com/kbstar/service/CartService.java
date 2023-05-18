@@ -63,4 +63,9 @@ public class CartService implements KBService<Integer, Cart> {
     public void afterOrder(String id) throws Exception {
         mapper.afterOrder(id);
     }
+
+    public int mycartcnt(String id) throws Exception {
+        int result = mapper.mycartcnt(id);
+        return result;
+    }
 }

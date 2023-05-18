@@ -2,7 +2,6 @@ package com.kbstar.controller;
 
 import com.kbstar.dto.Contact;
 import com.kbstar.dto.Cust;
-import com.kbstar.dto.ItemSearch;
 import com.kbstar.dto.Sales;
 import com.kbstar.service.*;
 import lombok.extern.slf4j.Slf4j;
@@ -41,9 +40,8 @@ public class MainController {
     private BCryptPasswordEncoder encoder;
 
     @RequestMapping("/")
-    public String main(Model model, ItemSearch csearch) {
+    public String main(Model model) {
         model.addAttribute("center", "center");
-        model.addAttribute("csearch", csearch);
         return "index";
     }
 
@@ -82,7 +80,6 @@ public class MainController {
         log.info("★★★★★★★★★★" + id + " " + pwd);
         Cust cust = null;
         String nextPage = "loginfail";
-
         try {
             cust = custService.get(id);
             if (cust != null && encoder.matches(pwd, cust.getPwd())) {
@@ -137,23 +134,16 @@ public class MainController {
 
     @RequestMapping("/sales")
     public String sales(Model model, int price, String gender, String cust_id) throws Exception {
+        log.info("*********************************************************");
         log.info(cust_id);
         Sales sales = new Sales();
         sales.setGender(gender);
         sales.setPrice(price);
         salesService.register(sales);
-        return "redirect:/afterOrder/?id="+cust_id;
-    }
-
-    @RequestMapping("/afterOrder")
-    public String afterOrder(Model model, String cust_id) throws Exception {
-        log.info(cust_id);
         cartService.afterOrder(cust_id);
         model.addAttribute("center", "orderok");
         return "index";
     }
-
-
 
 
 }
