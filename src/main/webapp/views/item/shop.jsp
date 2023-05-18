@@ -4,6 +4,13 @@
 <script>
     let category_search = {
         init: function () {
+            $('#top_search_btn').click(function () {
+                $('#top_search_form').attr({
+                    method: 'post',
+                    action: '/item/search'
+                });
+                $('#top_search_form').submit();
+            });
             $('#search_btn').click(function () {
                 $('#search_form').attr({
                     method: 'post',
@@ -60,9 +67,12 @@
                         <div class="dropdown ml-4">
                             <select class="form-control" id="category" name="category">
                                 <option value="">category</option>
-                                <option value="shirts">Shirts</option>
-                                <option value="pants">Pants</option>
-                                <option value="shoes">Shoes</option>
+                                <option value="shirts" <c:if test="${csearch.category=='shirts'}">selected</c:if>>Shirts
+                                </option>
+                                <option value="pants" <c:if test="${csearch.category=='pants'}">selected</c:if>>Pants
+                                </option>
+                                <option value="shoes" <c:if test="${csearch.category=='shoes'}">selected</c:if>>Shoes
+                                </option>
                             </select>
                         </div>
                     </form>

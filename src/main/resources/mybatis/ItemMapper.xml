@@ -38,7 +38,7 @@
         SELECT * FROM item
         <where>
             <if test="name != null and !name.equals('') ">
-                AND name LIKE '%'||#{name}||'%'
+                AND name LIKE '%'||upper(#{name})||'%'
             </if>
             <if test="category != null and !category.equals('')">
                 AND category = #{category}

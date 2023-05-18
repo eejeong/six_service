@@ -98,13 +98,13 @@
         </div>
         <%--        검색--%>
         <div class="col-lg-6 col-6 text-left">
-            <form id="search_form">
+            <form id="top_search_form">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search for products"
                            name="name" id="name" class="form-control" value="${csearch.name}">
                     <div class="input-group-append">
                             <span class="input-group-text bg-transparent text-primary">
-                                <button class="fa fa-search" type="button" id="search_btn"></button>
+                                <button class="fa fa-search" type="button" id="top_search_btn"></button>
                             </span>
                     </div>
                 </div>

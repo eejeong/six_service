@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 
 <!-- Page Header Start -->
@@ -28,134 +29,76 @@
                     <th>Quantity</th>
                     <th>Total</th>
                     <th>Remove</th>
+                    <th> &nbsp; &nbsp;  Save &nbsp; &nbsp;   </th>
                 </tr>
                 </thead>
                 <tbody class="align-middle">
-                <tr>
-                    <td class="align-middle"><img src="img/product-1.jpg" alt="" style="width: 50px;"> Colorful Stylish
-                        Shirt
-                    </td>
-                    <td class="align-middle">$150</td>
+                <c:forEach var="obj" items="${list}">
+                    <form id="saveAndDelete_form${obj.id}">
+                    <input type="hidden" name="id" value="${obj.id}">
+                    <input type="hidden" name="cust_id" value="${logincust.id}">
+
                     <td class="align-middle">
-                        <div class="input-group quantity mx-auto" style="width: 100px;">
+                        <a href="/item/detail?id=${obj.item_id}">
+                            <img src="/uimg/${obj.item_imgname}" alt="" style="width: 50px">
+                                ${obj.item_name}
+                        </a>
+                    </td>
+                    <td  class="align-middle">
+                        <fmt:formatNumber value="${obj.item_price}" pattern="###,###원" />
+                    </td>
+                    <td class="align-middle">
+                        <div class="input-group quantity mx-auto form-group" style="width: 100px;">
                             <div class="input-group-btn">
-                                <button class="btn btn-sm btn-primary btn-minus">
+                                <button type="button" class="btn btn-sm btn-primary btn-minus" id="minus_btn${obj.id}" >
                                     <i class="fa fa-minus"></i>
                                 </button>
                             </div>
-                            <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
+                            <input id="cnt${obj.id}" type="text" class="form-control form-control-sm bg-secondary text-center" name="cnt" value="${obj.cnt}">
                             <div class="input-group-btn">
-                                <button class="btn btn-sm btn-primary btn-plus">
+                                <button type="button" class="btn btn-sm btn-primary btn-plus" id="plus_btn${obj.id}">
                                     <i class="fa fa-plus"></i>
                                 </button>
                             </div>
                         </div>
                     </td>
-                    <td class="align-middle">$150</td>
                     <td class="align-middle">
-                        <button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button>
+                        <input  pattern="###,###원" readonly id="total${obj.id}" type="text" class="form-control form-control-sm bg-secondary text-center" name="total" value="${obj.cnt*obj.item_price}">
                     </td>
+                    <td class="align-middle form-group">
+                            <button type="submit" formaction="/cart/delete" formmethod="post" class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button>
+                    </td>
+
+                    <td class="align-middle form-group">
+                          <button type="submit" formaction="/cart/update" formmethod="get" class="btn btn-sm btn-primary"><i class="fa fa-check"></i></button>
+                    </td>
+                    </form>
                 </tr>
-                <tr>
-                    <td class="align-middle"><img src="img/product-2.jpg" alt="" style="width: 50px;"> Colorful Stylish
-                        Shirt
-                    </td>
-                    <td class="align-middle">$150</td>
-                    <td class="align-middle">
-                        <div class="input-group quantity mx-auto" style="width: 100px;">
-                            <div class="input-group-btn">
-                                <button class="btn btn-sm btn-primary btn-minus">
-                                    <i class="fa fa-minus"></i>
-                                </button>
-                            </div>
-                            <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
-                            <div class="input-group-btn">
-                                <button class="btn btn-sm btn-primary btn-plus">
-                                    <i class="fa fa-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="align-middle">$150</td>
-                    <td class="align-middle">
-                        <button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="align-middle"><img src="img/product-3.jpg" alt="" style="width: 50px;"> Colorful Stylish
-                        Shirt
-                    </td>
-                    <td class="align-middle">$150</td>
-                    <td class="align-middle">
-                        <div class="input-group quantity mx-auto" style="width: 100px;">
-                            <div class="input-group-btn">
-                                <button class="btn btn-sm btn-primary btn-minus">
-                                    <i class="fa fa-minus"></i>
-                                </button>
-                            </div>
-                            <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
-                            <div class="input-group-btn">
-                                <button class="btn btn-sm btn-primary btn-plus">
-                                    <i class="fa fa-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="align-middle">$150</td>
-                    <td class="align-middle">
-                        <button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="align-middle"><img src="img/product-4.jpg" alt="" style="width: 50px;"> Colorful Stylish
-                        Shirt
-                    </td>
-                    <td class="align-middle">$150</td>
-                    <td class="align-middle">
-                        <div class="input-group quantity mx-auto" style="width: 100px;">
-                            <div class="input-group-btn">
-                                <button class="btn btn-sm btn-primary btn-minus">
-                                    <i class="fa fa-minus"></i>
-                                </button>
-                            </div>
-                            <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
-                            <div class="input-group-btn">
-                                <button class="btn btn-sm btn-primary btn-plus">
-                                    <i class="fa fa-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="align-middle">$150</td>
-                    <td class="align-middle">
-                        <button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="align-middle"><img src="img/product-5.jpg" alt="" style="width: 50px;"> Colorful Stylish
-                        Shirt
-                    </td>
-                    <td class="align-middle">$150</td>
-                    <td class="align-middle">
-                        <div class="input-group quantity mx-auto" style="width: 100px;">
-                            <div class="input-group-btn">
-                                <button class="btn btn-sm btn-primary btn-minus">
-                                    <i class="fa fa-minus"></i>
-                                </button>
-                            </div>
-                            <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
-                            <div class="input-group-btn">
-                                <button class="btn btn-sm btn-primary btn-plus">
-                                    <i class="fa fa-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="align-middle">$150</td>
-                    <td class="align-middle">
-                        <button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button>
-                    </td>
-                </tr>
+
+                    <script>
+                        $('#plus_btn${obj.id}').on('click', function () {
+                            var oldValue = $('#cnt${obj.id}').val();
+                            var newVal = parseFloat(oldValue) + 1;
+                            $('#cnt${obj.id}').val(newVal); //cnt 수량 +1
+                            $('#total${obj.id}').val(($('#cnt${obj.id}').val())*(${obj.item_price}));
+                        });
+                        $('#minus_btn${obj.id}').on('click', function () {
+                            var oldValue = $('#cnt${obj.id}').val();
+                            var newVal = parseFloat(oldValue) - 1;
+                            if (oldValue == 0) {
+                                newVal = 0;
+                            }
+                            $('#cnt${obj.id}').val(newVal); //cnt 수량 -1
+                            $('#total${obj.id}').val(($('#cnt${obj.id}').val())*(${obj.item_price}));
+                        });
+                        $('#cnt${obj.id}').change(function (){
+                            $('#total${obj.id}').val(($('#cnt${obj.id}').val())*(${obj.item_price})); //cnt 변경 될때마다 total 변경
+                        })
+
+
+                    </script>
+
+                </c:forEach>
                 </tbody>
             </table>
         </div>

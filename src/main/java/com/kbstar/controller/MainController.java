@@ -43,11 +43,6 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("/cart")
-    public String about(Model model) throws Exception {
-        model.addAttribute("center", "cart");
-        return "index";
-    }
 
     @RequestMapping("/contact")
     public String contact(Model model) throws Exception {
