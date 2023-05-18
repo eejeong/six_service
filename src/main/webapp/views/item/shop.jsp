@@ -30,28 +30,29 @@
 
     let shop_cart = {
         init: function () {
-            $('.cartplus_btn_shop').click(function () {
+            $('.cartplus_btn').click(function () {
+                    var eventbtn = $(this);
                     if (${logincust != null}) {
-                        var item_id = $('#item_id').val();
+                        var item_id = eventbtn.prev().prev().prev().val();
                         $.ajax({
                             url: '/cartcheck',
                             data: {cust_id: "${logincust.id}", item_id: item_id},
                             success: function (result) {
                                 if (result != 0) {
-                                    $('#detail_cnt').val(result);
-                                    $('.cart_form').attr(
+                                    eventbtn.prev().prev().val(result);
+                                    eventbtn.parent().attr(
                                         {
                                             method: 'post',
                                             action: '/cart/update'
                                         });
-                                    $('#cart_form').submit();
+                                    eventbtn.parent().submit();
                                 } else {
-                                    $('#cart_form').attr(
+                                    eventbtn.parent().attr(
                                         {
                                             method: 'post',
                                             action: '/cart/insert'
                                         });
-                                    $('#cart_form').submit();
+                                    eventbtn.parent().submit();
                                 }
                             }
                         });
@@ -139,12 +140,13 @@
                             <a href="/item/detail?id=${obj.id}" class="btn btn-sm text-dark p-0"><i
                                     class="fas fa-eye text-primary mr-1"></i>View
                                 Detail</a>
-                            <form class="cart_form">
+                            <form id="cart_form_${obj.id}" class="cart_form">
                                 <input type="hidden" name="cust_id" value="${logincust.id}">
                                 <input type="hidden" name="item_id" value="${obj.id}">
                                 <input type="hidden" name="detail_cnt" value=0>
                                 <input type="hidden" name="cnt" value=1>
-                                <button type="button" class="btn btn-sm text-dark p-0 cartplus_btn_shop">
+                                <button type="button" class="btn btn-sm text-dark p-0 cartplus_btn"
+                                        id="cartplus_btn_${obj.id}">
                                     <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart
                                 </button>
                             </form>

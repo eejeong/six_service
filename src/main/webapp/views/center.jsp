@@ -71,27 +71,27 @@
     <div class="row px-xl-5 pb-3">
         <div class="col-lg-4 col-md-6 pb-1">
             <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                <p class="text-right">15 Products</p>
-                <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                    <img class="img-fluid" src="img/cat-1.jpg" alt="">
+                <p class="text-right">Products</p>
+                <a href="/item/shop" class="cat-img position-relative overflow-hidden mb-3">
+                    <img class="img-fluid" src="uimg/셔츠2.jpg" alt="">
                 </a>
                 <h5 class="font-weight-semi-bold m-0">Shirts</h5>
             </div>
         </div>
         <div class="col-lg-4 col-md-6 pb-1">
             <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                <p class="text-right">15 Products</p>
-                <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                    <img class="img-fluid" src="img/cat-2.jpg" alt="">
+                <p class="text-right">Products</p>
+                <a href="/item/shop" class="cat-img position-relative overflow-hidden mb-3">
+                    <img class="img-fluid" src="uimg/긴바지3.jpg" alt="">
                 </a>
                 <h5 class="font-weight-semi-bold m-0">Pants</h5>
             </div>
         </div>
         <div class="col-lg-4 col-md-6 pb-1">
             <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                <p class="text-right">15 Products</p>
-                <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                    <img class="img-fluid" src="img/cat-3.jpg" alt="">
+                <p class="text-right">Products</p>
+                <a href="/item/shop" class="cat-img position-relative overflow-hidden mb-3">
+                    <img class="img-fluid" src="uimg/신발3.jpg" alt="">
                 </a>
                 <h5 class="font-weight-semi-bold m-0">Shoes</h5>
             </div>
@@ -139,168 +139,52 @@
         <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
             <div class="card product-item border-0 mb-4">
                 <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                    <img class="img-fluid w-100" src="img/product-1.jpg" alt="">
+                    <img class="img-fluid w-100" src="uimg/반팔1.jpg" alt="">
                 </div>
                 <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                    <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                    <h6 class="text-truncate mb-3">PRDA DENIM PATCH</h6>
                     <div class="d-flex justify-content-center">
-                        <h6>$123.00</h6>
-                        <h6 class="text-muted ml-2">
-                            <del>$123.00</del>
-                        </h6>
+                        <h6>53,000원</h6>
                     </div>
-                </div>
-                <div class="card-footer d-flex justify-content-between bg-light border">
-                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add
-                        To Cart</a>
                 </div>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
             <div class="card product-item border-0 mb-4">
                 <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                    <img class="img-fluid w-100" src="img/product-2.jpg" alt="">
+                    <img class="img-fluid w-100" src="uimg/긴팔2.jpg" alt="">
                 </div>
                 <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                    <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                    <h6 class="text-truncate mb-3">MARCHE EMBLEM HOODIE</h6>
                     <div class="d-flex justify-content-center">
-                        <h6>$123.00</h6>
-                        <h6 class="text-muted ml-2">
-                            <del>$123.00</del>
-                        </h6>
+                        <h6>25,000원</h6>
                     </div>
-                </div>
-                <div class="card-footer d-flex justify-content-between bg-light border">
-                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add
-                        To Cart</a>
                 </div>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
             <div class="card product-item border-0 mb-4">
                 <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                    <img class="img-fluid w-100" src="img/product-3.jpg" alt="">
+                    <img class="img-fluid w-100" src="uimg/긴바지1.jpg" alt="">
                 </div>
                 <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                    <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                    <h6 class="text-truncate mb-3">Moonjar S PANTS</h6>
                     <div class="d-flex justify-content-center">
-                        <h6>$123.00</h6>
-                        <h6 class="text-muted ml-2">
-                            <del>$123.00</del>
-                        </h6>
+                        <h6>10,000원</h6>
                     </div>
-                </div>
-                <div class="card-footer d-flex justify-content-between bg-light border">
-                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add
-                        To Cart</a>
                 </div>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
             <div class="card product-item border-0 mb-4">
                 <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                    <img class="img-fluid w-100" src="img/product-4.jpg" alt="">
+                    <img class="img-fluid w-100" src="uimg/신발1.jpg" alt="">
                 </div>
                 <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                    <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                    <h6 class="text-truncate mb-3">VANS PYTHOND BEIGE SHOES</h6>
                     <div class="d-flex justify-content-center">
-                        <h6>$123.00</h6>
-                        <h6 class="text-muted ml-2">
-                            <del>$123.00</del>
-                        </h6>
+                        <h6>73,000원</h6>
                     </div>
-                </div>
-                <div class="card-footer d-flex justify-content-between bg-light border">
-                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add
-                        To Cart</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-            <div class="card product-item border-0 mb-4">
-                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                    <img class="img-fluid w-100" src="img/product-5.jpg" alt="">
-                </div>
-                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                    <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                    <div class="d-flex justify-content-center">
-                        <h6>$123.00</h6>
-                        <h6 class="text-muted ml-2">
-                            <del>$123.00</del>
-                        </h6>
-                    </div>
-                </div>
-                <div class="card-footer d-flex justify-content-between bg-light border">
-                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add
-                        To Cart</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-            <div class="card product-item border-0 mb-4">
-                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                    <img class="img-fluid w-100" src="img/product-6.jpg" alt="">
-                </div>
-                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                    <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                    <div class="d-flex justify-content-center">
-                        <h6>$123.00</h6>
-                        <h6 class="text-muted ml-2">
-                            <del>$123.00</del>
-                        </h6>
-                    </div>
-                </div>
-                <div class="card-footer d-flex justify-content-between bg-light border">
-                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add
-                        To Cart</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-            <div class="card product-item border-0 mb-4">
-                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                    <img class="img-fluid w-100" src="img/product-7.jpg" alt="">
-                </div>
-                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                    <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                    <div class="d-flex justify-content-center">
-                        <h6>$123.00</h6>
-                        <h6 class="text-muted ml-2">
-                            <del>$123.00</del>
-                        </h6>
-                    </div>
-                </div>
-                <div class="card-footer d-flex justify-content-between bg-light border">
-                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add
-                        To Cart</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-            <div class="card product-item border-0 mb-4">
-                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                    <img class="img-fluid w-100" src="img/product-8.jpg" alt="">
-                </div>
-                <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                    <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                    <div class="d-flex justify-content-center">
-                        <h6>$123.00</h6>
-                        <h6 class="text-muted ml-2">
-                            <del>$123.00</del>
-                        </h6>
-                    </div>
-                </div>
-                <div class="card-footer d-flex justify-content-between bg-light border">
-                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                    <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add
-                        To Cart</a>
                 </div>
             </div>
         </div>

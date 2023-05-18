@@ -111,16 +111,12 @@
             </form>
         </div>
         <div class="col-lg-3 col-6 text-right">
-            <%--        찜--%>
-            <a href="" class="btn border">
-                <i class="fas fa-heart text-primary"></i>
-                <span class="badge">0</span>
-            </a>
             <%--        장바구니--%>
-            <a href="javascript:cart.cartOrlogin()" type="button" class="btn border" id="cart_btn">
-                <i class="fas fa-shopping-cart text-primary"></i>
-                <span class="badge">0</span>
-            </a>
+            <c:if test="${logincust != null}">
+                <a href="/cart?id=${logincust.id}" type="button" class="btn border" id="cart_btn">
+                    <i class="fas fa-shopping-cart text-primary"></i>
+                </a>
+            </c:if>
         </div>
     </div>
 </div>
@@ -139,9 +135,9 @@
             <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light"
                  id="navbar-vertical" style="width: calc(100% - 30px); z-index: 1;">
                 <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
-                    <a href="" class="nav-item nav-link">Shirts</a>
-                    <a href="" class="nav-item nav-link">Pants</a>
-                    <a href="" class="nav-item nav-link">Shoes</a>
+                    <a href="/item/searchcategory?name=&category=shirts" class="nav-item nav-link">Shirts</a>
+                    <a href="/item/searchcategory?name=&category=pants" class="nav-item nav-link">Pants</a>
+                    <a href="/item/searchcategory?name=&category=shoes" class="nav-item nav-link">Shoes</a>
                 </div>
             </nav>
         </div>
