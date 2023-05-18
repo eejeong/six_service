@@ -2,8 +2,10 @@ package com.kbstar.controller;
 
 import com.kbstar.dto.Contact;
 import com.kbstar.dto.Cust;
+import com.kbstar.dto.ItemSearch;
 import com.kbstar.service.ContactService;
 import com.kbstar.service.CustService;
+import com.kbstar.service.ItemService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -25,14 +27,19 @@ public class MainController {
     ContactService contactService;
 
     @Autowired
+    ItemService itemService;
+    String dir = "item/";
+
+    @Autowired
     CustService custService;
 
     @Autowired
     private BCryptPasswordEncoder encoder;
 
     @RequestMapping("/")
-    public String main(Model model) throws Exception {
+    public String main(Model model, ItemSearch csearch) {
         model.addAttribute("center", "center");
+        model.addAttribute("csearch", csearch);
         return "index";
     }
 
@@ -125,4 +132,6 @@ public class MainController {
         model.addAttribute("center", "center");
         return "index";
     }
+
+
 }

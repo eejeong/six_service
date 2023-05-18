@@ -98,12 +98,13 @@
         </div>
         <%--        검색--%>
         <div class="col-lg-6 col-6 text-left">
-            <form action="">
+            <form id="search_form">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for products">
+                    <input type="text" class="form-control" placeholder="Search for products"
+                           name="name" id="name" class="form-control" value="${csearch.name}">
                     <div class="input-group-append">
                             <span class="input-group-text bg-transparent text-primary">
-                                <i class="fa fa-search"></i>
+                                <button class="fa fa-search" type="button" id="search_btn"></button>
                             </span>
                     </div>
                 </div>
@@ -140,6 +141,7 @@
                 <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
                     <a href="" class="nav-item nav-link">Shirts</a>
                     <a href="" class="nav-item nav-link">Pants</a>
+                    <a href="" class="nav-item nav-link">Shoes</a>
                 </div>
             </nav>
         </div>
@@ -156,7 +158,6 @@
                     <div class="navbar-nav mr-auto py-0">
                         <a href="/" class="nav-item nav-link">Home</a>
                         <a href="/item/shop" class="nav-item nav-link">Shop</a>
-                        <a href="#" class="nav-item nav-link">Store</a>
                         <c:choose>
                             <c:when test="${logincust!=null}">
                                 <a href="/contact" class="nav-item nav-link">Contact</a>

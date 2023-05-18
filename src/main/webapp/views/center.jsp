@@ -4,7 +4,7 @@
 <!-- Page Header Start -->
 <div class="container-fluid bg-secondary mb-5">
     <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
-        <h1 class="font-weight-semi-bold text-uppercase mb-3">Welcom to our shop</h1>
+        <h1 class="font-weight-semi-bold text-uppercase mb-3">Welcome to our shop</h1>
         <div class="d-inline-flex">
             <p class="m-0"><a href="/">Home</a></p>
         </div>
@@ -75,7 +75,7 @@
                 <a href="" class="cat-img position-relative overflow-hidden mb-3">
                     <img class="img-fluid" src="img/cat-1.jpg" alt="">
                 </a>
-                <h5 class="font-weight-semi-bold m-0">Men's dresses</h5>
+                <h5 class="font-weight-semi-bold m-0">Shirts</h5>
             </div>
         </div>
         <div class="col-lg-4 col-md-6 pb-1">
@@ -84,7 +84,7 @@
                 <a href="" class="cat-img position-relative overflow-hidden mb-3">
                     <img class="img-fluid" src="img/cat-2.jpg" alt="">
                 </a>
-                <h5 class="font-weight-semi-bold m-0">Women's dresses</h5>
+                <h5 class="font-weight-semi-bold m-0">Pants</h5>
             </div>
         </div>
         <div class="col-lg-4 col-md-6 pb-1">
@@ -93,36 +93,10 @@
                 <a href="" class="cat-img position-relative overflow-hidden mb-3">
                     <img class="img-fluid" src="img/cat-3.jpg" alt="">
                 </a>
-                <h5 class="font-weight-semi-bold m-0">Baby's dresses</h5>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 pb-1">
-            <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                <p class="text-right">15 Products</p>
-                <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                    <img class="img-fluid" src="img/cat-4.jpg" alt="">
-                </a>
-                <h5 class="font-weight-semi-bold m-0">Accerssories</h5>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 pb-1">
-            <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                <p class="text-right">15 Products</p>
-                <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                    <img class="img-fluid" src="img/cat-5.jpg" alt="">
-                </a>
-                <h5 class="font-weight-semi-bold m-0">Bags</h5>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 pb-1">
-            <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                <p class="text-right">15 Products</p>
-                <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                    <img class="img-fluid" src="img/cat-6.jpg" alt="">
-                </a>
                 <h5 class="font-weight-semi-bold m-0">Shoes</h5>
             </div>
         </div>
+
     </div>
 </div>
 <!-- Categories End -->

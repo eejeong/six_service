@@ -34,5 +34,16 @@
         FROM item
         WHERE id = #{id}
     </delete>
+    <select id="search" parameterType="itemSearch" resultType="item">
+        SELECT * FROM item
+        <where>
+            <if test="name != null and !name.equals('') ">
+                AND name LIKE '%'||#{name}||'%'
+            </if>
+            <if test="category != null and !category.equals('')">
+                or category = #{category}
+            </if>
+        </where>
+    </select>
 
 </mapper>
