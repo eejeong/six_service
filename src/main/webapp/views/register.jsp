@@ -10,10 +10,10 @@
             $('#register_btn').click(function () {
                 register_form.send();
             });
-            $('#name').keyup(function () {
+            $('#cust_name').keyup(function () {
                 var id = $('#id').val();
                 var pwd = $('#pwd').val();
-                var name = $('#name').val();
+                var name = $('#cust_name').val();
                 if (id != '' && pwd != '' && name != '') {
                     $('#register_btn').removeClass('disabled');
                 }
@@ -40,7 +40,7 @@
         send: function () {
             var id = $('#id').val();
             var pwd = $('#pwd').val();
-            var name = $('#name').val();
+            var name = $('#cust_name').val();
             if (id.length <= 3) {
                 $('#check_id').text("ID는 4자리 이상이어야 합니다.");
                 $('#id').focus();
@@ -51,7 +51,7 @@
                 return;
             }
             if (name == '') {
-                $('#name').focus();
+                $('#cust_name').focus();
                 return;
             }
 
@@ -100,12 +100,12 @@
                                    name="pwd">
                         </div>
                         <div class="form-group">
-                            <label for="name">Name:</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+                            <label for="cust_name">Name:</label>
+                            <input type="text" class="form-control" id="cust_name" placeholder="Enter name" name="name">
                         </div>
                         <input type="hidden" name="address" id="address" value="">
                         <div class="form-group">
-                            <label for="name">Address:</label>
+                            <label for="zipcode">Address:</label>
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="우편번호"
                                        style="margin-right: 10px">

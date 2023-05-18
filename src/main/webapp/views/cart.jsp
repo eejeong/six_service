@@ -17,7 +17,7 @@
             });
             $('#order_btn').click(function (){
                 $('#order_form').attr({
-                    method: "post",
+                    method: "get",
                     action: "/sales"
                 })
                 $('#order_form').submit()
@@ -166,7 +166,7 @@
                             <h5 class="font-weight-bold">Total</h5>
                             <input name="price" type="text"  class="font-weight-bold" id="ftotal" value="${total+3000}"/>
                             <input name="gender" type="hidden"   value="${logincust.gender}"/>
-                            <input name="gender" type="hidden"   value="${logincust.id}"/>
+                            <input name="cust_id" type="hidden"   value="${logincust.id}"/>
                         </div>
                         <button class="btn btn-block btn-primary my-3 py-3" type="button" id="order_btn">Proceed To Order</button>
 

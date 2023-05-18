@@ -136,12 +136,24 @@ public class MainController {
     }
 
     @RequestMapping("/sales")
-    public String sales(Model model, Sales sales, String id) throws Exception {
+    public String sales(Model model, int price, String gender, String cust_id) throws Exception {
+        log.info(cust_id);
+        Sales sales = new Sales();
+        sales.setGender(gender);
+        sales.setPrice(price);
         salesService.register(sales);
-        cartService.afterOrder(id);
+        return "redirect:/afterOrder/?id="+cust_id;
+    }
+
+    @RequestMapping("/afterOrder")
+    public String afterOrder(Model model, String cust_id) throws Exception {
+        log.info(cust_id);
+        cartService.afterOrder(cust_id);
         model.addAttribute("center", "orderok");
         return "index";
     }
+
+
 
 
 }

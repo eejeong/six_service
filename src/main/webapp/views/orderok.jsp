@@ -11,28 +11,3 @@
     </div>
 </div>
 <!-- Page Header End -->
-
-
-#cartsql.xml
-<delete id="afterOrder" parameterType="String">
-    DELETE FROM cart WHERE cust_id=#{id}
-</delete>
-
-#CartMapper
-public void afterOrder(String cid);
-
-#CartService
-public void afterOrder(String s) throws Exception {
-mapper.afterOrder(s);
-}
-
-#MainController
-@RequestMapping("/sales")
-public String sales(Model model, Sales sales, HttpSession session) throws Exception {
-salesService.register(sales);
-cartService.afterOrder(세션의 cust 아이디?);
-model.addAttribute("center", "orderok");
-return "index";
-}
-
-인덱스에 스토어 없애기.

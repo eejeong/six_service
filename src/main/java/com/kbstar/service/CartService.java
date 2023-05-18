@@ -60,7 +60,7 @@ public class CartService implements KBService<Integer, Cart> {
         mapper.update_shop(cart);
     }
 
-    public void afterOrder(String s) throws Exception {
-        mapper.afterOrder(s);
+    public void afterOrder(String id) throws Exception {
+        mapper.afterOrder(id);
     }
 }
