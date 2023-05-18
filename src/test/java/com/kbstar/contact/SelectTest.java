@@ -14,7 +14,7 @@ class SelectTest {
     @Test
     void contextLoads() {
         try {
-            service.getall();
+            service.get();
         } catch (Exception e) {
             log.info("★★★★★★★★★★★★★★★ERROR★★★★★★★★★★★★★★★");
             e.printStackTrace();

@@ -2,6 +2,7 @@ package com.kbstar.dto;
 
 import lombok.*;
 
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter

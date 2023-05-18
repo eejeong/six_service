@@ -37,11 +37,6 @@ public class CustService implements KBService<String, Cust> {
     }
 
     @Override
-    public List<Cust> getall() {
-        return null;
-    }
-
-    @Override
     public List<Cust> get() throws Exception {
         return mapper.selectall();
     }

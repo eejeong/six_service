@@ -18,7 +18,7 @@
     <!-- Template Javascript -->
     <script src="/js/main.js"></script>
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="/img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -29,17 +29,16 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 
     <script type="text/javascript">
         <%--장바구니--%>
 
         let cart ={
             cartOrlogin:function (){
-                $('#cart_btn').click(function (){
                     if(${logincust == null}){
                         if(confirm("로그인이 필요합니다. 로그인 하시겠습니까?")){
                             location.href="/login";
@@ -47,9 +46,8 @@
                             location.href="/";
                         }
                     }else {
-                        location.href="/cart:cust_id?=${logincust.id}";
+                        location.href="/cart?id=${logincust.id}";
                     }
-                })
             }
         }
         <%--장바구니 end--%>

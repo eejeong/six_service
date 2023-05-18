@@ -2,8 +2,10 @@ package com.kbstar.controller;
 
 import com.kbstar.dto.Contact;
 import com.kbstar.dto.Cust;
+import com.kbstar.dto.Sales;
 import com.kbstar.service.ContactService;
 import com.kbstar.service.CustService;
+import com.kbstar.service.SalesService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 @Slf4j
@@ -26,9 +29,12 @@ public class MainController {
 
     @Autowired
     CustService custService;
+    @Autowired
+    SalesService salesService;
 
     @Autowired
     private BCryptPasswordEncoder encoder;
+
 
     @RequestMapping("/")
     public String main(Model model) throws Exception {
@@ -36,14 +42,12 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("/cart")
-    public String about(Model model) throws Exception {
-        model.addAttribute("center", "cart");
-        return "index";
-    }
 
     @RequestMapping("/contact")
-    public String contact(Model model) throws Exception {
+    public String contact(Model model, HttpSession httpSession) {
+        if (httpSession.getAttribute("logincust") == null) {
+            return "redirect:/login";
+        }
         model.addAttribute("center", "contact");
         return "index";
     }
@@ -128,6 +132,12 @@ public class MainController {
             e.printStackTrace();
             throw new Exception("실패");
         }
+        model.addAttribute("center", "center");
+        return "index";
+    }
+    @RequestMapping("/sales")
+    public String sales(Model model, Sales sales) throws Exception {
+        salesService.register(sales);
         model.addAttribute("center", "center");
         return "index";
     }

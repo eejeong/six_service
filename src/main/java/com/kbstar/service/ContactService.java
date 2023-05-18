@@ -45,13 +45,9 @@ public class ContactService implements KBService<String, Contact> {
     }
 
     @Override
-    public List<Contact> getall() {
+    public List<Contact> get() {
         List<Contact> list = contactMapper.selectall();
         return list;
     }
 
-    @Override
-    public List<Cust> get() throws Exception {
-        return null;
-    }
 }
