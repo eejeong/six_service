@@ -16,4 +16,6 @@ public interface CartMapper extends KBMapper<Integer, Cart> {
 
 
     public void update_shop(Cart cart);
+
+    public void afterOrder(String cid);
 }

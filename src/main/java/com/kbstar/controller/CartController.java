@@ -50,4 +50,10 @@ public class CartController {
         cartService.register(cart);
         return "redirect:/cart?id=" + cart.getCust_id();
     }
+
+    @RequestMapping("/update")
+    public String update(Cart cart) throws Exception {
+        cartService.modify(cart);
+        return "redirect:/cart?id=" + cart.getCust_id();
+    }
 }

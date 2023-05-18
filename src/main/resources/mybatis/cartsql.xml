@@ -45,6 +45,9 @@
         WHERE cust_id = #{cust_id}
           AND item_id = #{item_id}
     </update>
+    <update id="update" parameterType="cart">
+        UPDATE cart SET cnt=#{cnt} WHERE id=#{id}
+    </update>
     <insert id="insert" parameterType="cart">
         INSERT INTO cart
         VALUES (cart_seq.NEXTVAL, #{cust_id}, #{item_id}, #{cnt}, SYSDATE)
@@ -54,6 +57,10 @@
         DELETE
         FROM cart
         WHERE id = #{id}
+    </delete>
+
+    <delete id="afterOrder" parameterType="String">
+        DELETE FROM cart WHERE cust_id=#{id}
     </delete>
 
 </mapper>
