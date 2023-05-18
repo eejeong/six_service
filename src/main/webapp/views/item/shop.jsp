@@ -11,6 +11,13 @@
                 });
                 $('#search_form').submit();
             });
+            $('#category').change(function () {
+                $('#search_form').attr({
+                    method: 'get',
+                    action: '/item/searchcategory'
+                });
+                $('#search_form').submit();
+            });
         }
     };
     $(function () {
@@ -53,12 +60,9 @@
                         <div class="dropdown ml-4">
                             <select class="form-control" id="category" name="category">
                                 <option value="">category</option>
-                                <option value="shirts" <c:if test="${csearch.category=='shirts'}">selected</c:if>>Shirts
-                                </option>
-                                <option value="pants" <c:if test="${csearch.category=='pants'}">selected</c:if>>Pants
-                                </option>
-                                <option value="shoes" <c:if test="${csearch.category=='shoes'}">selected</c:if>>Shoes
-                                </option>
+                                <option value="shirts">Shirts</option>
+                                <option value="pants">Pants</option>
+                                <option value="shoes">Shoes</option>
                             </select>
                         </div>
                     </form>

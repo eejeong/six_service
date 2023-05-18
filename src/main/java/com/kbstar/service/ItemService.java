@@ -60,4 +60,8 @@ public class ItemService implements KBService<Integer, Item> {
     public List<Item> search(ItemSearch csearch) throws Exception {
         return mapper.search(csearch);
     }
+
+    public List<Item> searchcategory(ItemSearch csearch) throws Exception {
+        return mapper.searchcategory(csearch);
+    }
 }

@@ -14,5 +14,7 @@ import java.util.List;
 public interface ItemMapper extends KBMapper<Integer, Item> {
     public List<Item> search(ItemSearch csearch);
 
+    public List<Item> searchcategory(ItemSearch csearch);
+
     Page<Item> getpage() throws Exception;
 }

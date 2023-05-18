@@ -41,9 +41,16 @@
                 AND name LIKE '%'||#{name}||'%'
             </if>
             <if test="category != null and !category.equals('')">
-                or category = #{category}
+                AND category = #{category}
             </if>
         </where>
     </select>
-
+    <select id="searchcategory" parameterType="itemSearch" resultType="item">
+        SELECT * FROM item
+        <where>
+            <if test="category != null and !category.equals('')">
+                AND category = #{category}
+            </if>
+        </where>
+    </select>
 </mapper>

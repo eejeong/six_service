@@ -103,4 +103,15 @@ public class ItemController {
         return "index";
     }
 
+    @RequestMapping("/searchcategory")
+    public String searchcategory(Model model, ItemSearch csearch) throws Exception {
+        List<Item> list = null;
+        log.info(csearch.toString());
+        list = itemService.searchcategory(csearch);
+        model.addAttribute("csearch", csearch);
+        model.addAttribute("clist", list);
+        model.addAttribute("center", dir + "shop");
+        return "index";
+    }
+
 }
