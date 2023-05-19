@@ -181,7 +181,7 @@
                     <img class="img-fluid w-100" src="uimg/신발1.jpg" alt="">
                 </div>
                 <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                    <h6 class="text-truncate mb-3">VANS PYTHOND BEIGE SHOES</h6>
+                    <h6 class="text-truncate mb-3">VANS PYTHOND BEIGE SHOES</h6>-
                     <div class="d-flex justify-content-center">
                         <h6>73,000원</h6>
                     </div>

@@ -6,7 +6,7 @@
     <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
         <h1 class="font-weight-semi-bold text-uppercase mb-3">Thank you for your order!</h1>
         <div class="d-inline-flex">
-            <p class="m-0"><a href="/shop">Return to Shop</a></p>
+            <p class="m-0"><a href="/item/shop">Return to Shop</a></p>
         </div>
     </div>
 </div>

@@ -3,19 +3,19 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <script>
 
-    let totalcart={
-        init:function (){
-            $('#coupon_btn').click(function (){
+    let totalcart = {
+        init: function () {
+            $('#coupon_btn').click(function () {
 
-                let coupon_code=$('#coupon_code').val();
-                if(coupon_code == "six"){
+                let coupon_code = $('#coupon_code').val();
+                if (coupon_code == "six") {
                     $('#coupon').val("0");
-                }else{
+                } else {
                     $('#coupon').val("3000");
                 }
-                $('#ftotal').val(parseInt($('#subtotal').val())+parseInt($('#coupon').val()));
+                $('#ftotal').val(parseInt($('#subtotal').val()) + parseInt($('#coupon').val()));
             });
-            $('#order_btn').click(function (){
+            $('#order_btn').click(function () {
                 $('#order_form').attr({
                     method: "get",
                     action: "/sales"
@@ -25,7 +25,7 @@
         }
 
     }
-    $(function (){
+    $(function () {
         totalcart.init();
     })
 
@@ -52,7 +52,7 @@
             <c:set var="total" value="0"/>
             <p class="m-0"> 수량 변경 시 save하셔야 반영됩니다.</p>
             <table class="table table-bordered text-center mb-0">
-                <thead class="bg-secondary text-dark" >
+                <thead class="bg-secondary text-dark">
                 <tr>
                     <th>Products</th>
                     <th>Price</th>
@@ -74,33 +74,41 @@
                                     ${obj.item_name}
                             </a>
                         </td>
-                        <td  class="align-middle">
-                            <fmt:formatNumber value="${obj.item_price}" pattern="###,###원" />
+                        <td class="align-middle">
+                            <fmt:formatNumber value="${obj.item_price}" pattern="###,###원"/>
                         </td>
                         <td class="align-middle">
                             <div class="input-group quantity mx-auto form-group" style="width: 100px;">
                                 <div class="input-group-btn">
-                                    <button type="button" class="btn btn-sm btn-primary btn-minus" id="minus_btn${obj.id}" >
+                                    <button type="button" class="btn btn-sm btn-primary btn-minus"
+                                            id="minus_btn${obj.id}">
                                         <i class="fa fa-minus"></i>
                                     </button>
                                 </div>
-                                <input id="cnt${obj.id}" type="text" class="form-control form-control-sm bg-secondary text-center" name="cnt" value="${obj.cnt}">
+                                <input id="cnt${obj.id}" type="text"
+                                       class="form-control form-control-sm bg-secondary text-center" name="cnt"
+                                       value="${obj.cnt}">
                                 <div class="input-group-btn">
-                                    <button type="button" class="btn btn-sm btn-primary btn-plus" id="plus_btn${obj.id}">
+                                    <button type="button" class="btn btn-sm btn-primary btn-plus"
+                                            id="plus_btn${obj.id}">
                                         <i class="fa fa-plus"></i>
                                     </button>
                                 </div>
                             </div>
                         </td>
                         <td class="align-middle">
-                            <input  pattern="###,###원" readonly id="total${obj.id}" type="text" class="form-control form-control-sm bg-secondary text-center" name="total" value="${obj.cnt*obj.item_price}">
+                            <input pattern="###,###원" readonly id="total${obj.id}" type="text"
+                                   class="form-control form-control-sm bg-secondary text-center" name="total"
+                                   value="${obj.cnt*obj.item_price}">
                         </td>
                         <td class="align-middle form-group">
-                            <button type="submit" formaction="/cart/delete" formmethod="post" class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button>
+                            <button type="submit" formaction="/cart/delete" formmethod="post"
+                                    class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button>
                         </td>
 
                         <td class="align-middle form-group">
-                            <button type="submit" formaction="/cart/update" formmethod="get" class="btn btn-sm btn-primary"><i class="fa fa-check"></i></button>
+                            <button type="submit" formaction="/cart/update" formmethod="get"
+                                    class="btn btn-sm btn-primary"><i class="fa fa-check"></i></button>
                         </td>
                     </form>
                     </tr>
@@ -110,7 +118,7 @@
                             var oldValue = $('#cnt${obj.id}').val();
                             var newVal = parseFloat(oldValue) + 1;
                             $('#cnt${obj.id}').val(newVal); //cnt 수량 +1
-                            $('#total${obj.id}').val(($('#cnt${obj.id}').val())*(${obj.item_price}));
+                            $('#total${obj.id}').val(($('#cnt${obj.id}').val()) * (${obj.item_price}));
                         });
                         $('#minus_btn${obj.id}').on('click', function () {
                             var oldValue = $('#cnt${obj.id}').val();
@@ -119,10 +127,10 @@
                                 newVal = 0;
                             }
                             $('#cnt${obj.id}').val(newVal); //cnt 수량 -1
-                            $('#total${obj.id}').val(($('#cnt${obj.id}').val())*(${obj.item_price}));
+                            $('#total${obj.id}').val(($('#cnt${obj.id}').val()) * (${obj.item_price}));
                         });
-                        $('#cnt${obj.id}').change(function (){
-                            $('#total${obj.id}').val(($('#cnt${obj.id}').val())*(${obj.item_price})); //cnt 변경 될때마다 total 변경
+                        $('#cnt${obj.id}').change(function () {
+                            $('#total${obj.id}').val(($('#cnt${obj.id}').val()) * (${obj.item_price})); //cnt 변경 될때마다 total 변경
                         })
 
                     </script>
@@ -137,9 +145,10 @@
 
 
         <div class="col-lg-4">
-            <form >
+            <form>
                 <div class="input-group">
-                    <input type="text" class="form-control p-4" placeholder="Coupon Code" id="coupon_code" name="coupon_code">
+                    <input type="text" class="form-control p-4" placeholder="Coupon Code" id="coupon_code"
+                           name="coupon_code">
                     <div class="input-group-append">
                         <button type="button" class="btn btn-primary" id="coupon_btn">Apply Coupon</button>
                     </div>
@@ -153,22 +162,25 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between mb-3 pt-1">
                         <h6 class="font-weight-medium">Subtotal</h6>
-                        <input type="text" id="subtotal" class="font-weight-medium" value="${total}" />
+                        <input type="text" id="subtotal" class="font-weight-medium" value="${total}" readonly/>
                     </div>
                     <div class="d-flex justify-content-between">
                         <h6 class="font-weight-medium">Shipping</h6>
-                        <input type="text" value="3000" class="font-weight-medium" id="coupon"/>
+                        <input type="text" value="3000" class="font-weight-medium" id="coupon" readonly/>
                     </div>
                 </div>
                 <div class="card-footer border-secondary bg-transparent">
                     <form id="order_form">
                         <div class="d-flex justify-content-between mt-2">
                             <h5 class="font-weight-bold">Total</h5>
-                            <input name="price" type="text"  class="font-weight-bold" id="ftotal" value="${total+3000}"/>
-                            <input name="gender" type="hidden"   value="${logincust.gender}"/>
-                            <input name="cust_id" type="hidden"   value="${logincust.id}"/>
+                            <input name="price" type="text" class="font-weight-bold" id="ftotal" value="${total+3000}"
+                                   readonly/>
+                            <input name="gender" type="hidden" value="${logincust.gender}"/>
+                            <input name="cust_id" type="hidden" value="${logincust.id}"/>
                         </div>
-                        <button class="btn btn-block btn-primary my-3 py-3" type="button" id="order_btn">Proceed To Order</button>
+                        <button class="btn btn-block btn-primary my-3 py-3" type="button" id="order_btn">Proceed To
+                            Order
+                        </button>
 
                     </form>
 
