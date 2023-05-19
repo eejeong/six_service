@@ -9,6 +9,19 @@
         FROM item
         ORDER BY id DESC
     </select>
+
+    <select id="getpagesearch" parameterType="String" resultType="item">
+        SELECT *
+        FROM item
+        where NAME LIKE '%' || #{name} || '%'
+        ORDER BY id DESC
+    </select>
+    <select id="getpagecate" parameterType="String" resultType="item">
+        SELECT *
+        FROM item
+        where category = #{category}
+        ORDER BY id DESC
+    </select>
     <select id="select" parameterType="Integer" resultType="item">
         SELECT *
         FROM item

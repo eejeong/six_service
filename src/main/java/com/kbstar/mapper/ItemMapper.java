@@ -17,4 +17,9 @@ public interface ItemMapper extends KBMapper<Integer, Item> {
     public List<Item> searchcategory(ItemSearch csearch);
 
     Page<Item> getpage() throws Exception;
+
+    Page<Item> getpagesearch(String name) throws Exception;
+
+    Page<Item> getpagecate(String name) throws Exception;
+
 }

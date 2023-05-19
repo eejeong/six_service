@@ -56,6 +56,16 @@ public class ItemService implements KBService<Integer, Item> {
         return mapper.getpage();
     }
 
+    public Page<Item> getpagesearch(int pageNo, String name) throws Exception {
+        PageHelper.startPage(pageNo, 6); // 3: 한화면에 출력되는 개수
+        return mapper.getpagesearch(name);
+    }
+
+    public Page<Item> getpagecate(int pageNo, String category) throws Exception {
+        PageHelper.startPage(pageNo, 6); // 3: 한화면에 출력되는 개수
+        return mapper.getpagecate(category);
+    }
+
 
     public List<Item> search(ItemSearch csearch) throws Exception {
         return mapper.search(csearch);

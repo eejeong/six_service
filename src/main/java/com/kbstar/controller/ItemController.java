@@ -52,22 +52,35 @@ public class ItemController {
     }
 
     @RequestMapping("/search")
-    public String search(Model model, ItemSearch csearch) throws Exception {
-        List<Item> list = null;
-        list = itemService.search(csearch);
-        model.addAttribute("csearch", csearch);
-        model.addAttribute("clist", list);
+    public String search(@RequestParam(required = false, defaultValue = "1") int pageNo, Model model, ItemSearch csearch) throws Exception {
+        PageInfo<Item> p;
+        List<Item> clist;
+        try {
+            p = new PageInfo<>(itemService.getpagesearch(pageNo, csearch.getName()), 5);
+            clist = p.getList();// 5:하단 네비게이션 개수
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+        model.addAttribute("target", "item");
+        model.addAttribute("clist", clist);
+        model.addAttribute("cpage", p);
         model.addAttribute("center", dir + "shop");
         return "index";
     }
 
     @RequestMapping("/searchcategory")
-    public String searchcategory(Model model, ItemSearch csearch) throws Exception {
-        List<Item> list = null;
-        log.info(csearch.toString());
-        list = itemService.searchcategory(csearch);
-        model.addAttribute("csearch", csearch);
-        model.addAttribute("clist", list);
+    public String searchcategory(@RequestParam(required = false, defaultValue = "1") int pageNo, Model model, ItemSearch csearch) throws Exception {
+        PageInfo<Item> p;
+        List<Item> clist;
+        try {
+            p = new PageInfo<>(itemService.getpagecate(pageNo, csearch.getCategory()), 5);
+            clist = p.getList();// 5:하단 네비게이션 개수
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+        model.addAttribute("target", "item");
+        model.addAttribute("clist", clist);
+        model.addAttribute("cpage", p);
         model.addAttribute("center", dir + "shop");
         return "index";
     }
