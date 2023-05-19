@@ -64,7 +64,7 @@
     <div class="row bg-secondary py-2 px-xl-5">
         <div class="col-lg-6 d-none d-lg-block">
             <div class="d-inline-flex align-items-center">
-                <a class="text-dark" href="/contact">FAQs</a>
+                <a class="text-dark" href="/uimg/시스템구성도.jpg">FAQs</a>
                 <span class="text-muted px-2">|</span>
                 <a class="text-dark" href="/contact">Help</a>
             </div>
