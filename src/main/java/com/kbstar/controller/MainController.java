@@ -145,5 +145,16 @@ public class MainController {
         return "index";
     }
 
+    @RequestMapping("/systemmap")
+    public String systemmap(Model model) {
+        model.addAttribute("center", "systemmap");
+        return "index";
+    }
+
+    @RequestMapping("/godjinman")
+    public String godjinman(Model model) {
+        model.addAttribute("center", "godjinman");
+        return "index";
+    }
 
 }
